@@ -31,20 +31,19 @@ export default function App() {
   function handleDelete(id) {
     setTodos((prevTodos) => {
       let out = [];
-      for (let todo in prevTodos) {
-        if (todo.id !== id) {
-          out.push(todo);
+      for (let i = 0; i < prevTodos.length; i++) {
+        if (prevTodos[i].id !== id) {
+          out.push(prevTodos[i]);
         }
       }
       return out;
     });
-    console.log(todos);
   }
 
   // Use for debugging
-  // useEffect(() => {
-  //   console.log(todos);
-  // }, [todos]);
+  useEffect(() => {
+    console.log(todos);
+  }, [todos]);
 
   return (
     <>
