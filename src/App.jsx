@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./App.css";
 
 export default function App() {
   const [item, setItem] = useState("");
@@ -28,6 +29,7 @@ export default function App() {
     );
   };
 
+  // Locates and deletes selected todo item
   function handleDelete(id) {
     setTodos((prevTodos) => {
       let out = [];
