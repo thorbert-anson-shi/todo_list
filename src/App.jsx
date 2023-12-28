@@ -28,10 +28,23 @@ export default function App() {
     );
   };
 
-  // Use for debugging
-  useEffect(() => {
+  function handleDelete(id) {
+    setTodos((prevTodos) => {
+      let out = [];
+      for (let todo in prevTodos) {
+        if (todo.id !== id) {
+          out.push(todo);
+        }
+      }
+      return out;
+    });
     console.log(todos);
-  }, [todos]);
+  }
+
+  // Use for debugging
+  // useEffect(() => {
+  //   console.log(todos);
+  // }, [todos]);
 
   return (
     <>
@@ -64,6 +77,12 @@ export default function App() {
                 />
                 {todo.title}
               </label>
+              <button
+                className="btn delete-btn"
+                onClick={() => handleDelete(todo.id)}
+              >
+                Delete
+              </button>
             </li>
           );
         })}
