@@ -1,5 +1,95 @@
+body {
+    background-color: rgb(54, 54, 54);
+    letter-spacing: 0.1rem;
+}
+
+.item-list>* {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    border: 1px solid black;
+    border-radius: inherit;
+    padding: 0.5em;
+    margin: 0.25em 0 0.25em 0;
+    background-color: rgb(70, 70, 70);
+}
+
+label {
+    margin: 0.5em 0 0.5em 0;
+}
+
 #root {
     display: flex;
     flex-direction: column;
+
+    margin: auto;
+    margin-top: 2em;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+
+    height: fit-content;
+    width: 80%;
+
+    color: white;
+    text-align: center;
+}
+
+#root>* {
+    display: inherit;
+    justify-content: center;
+    width: 100%;
+    margin: 0em;
+    padding: 1em 0 1em 0;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+.new-item-form {
+    flex-direction: row;
+}
+
+.btn {
+    border: none;
+    padding: 0.5em;
+    font-size: inherit;
+    cursor: pointer;
+    border-radius: inherit;
+}
+
+.delete-btn:hover {
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.delete-btn {
+    background-color: red;
+    font-size: 0.8em;
+}
+
+.checkbox {
+    height: 2em;
+    width: 2em;
+    margin-right: 1em;
+}
+
+.checkbox:hover {
+    cursor: pointer;
+}
+
+.item-list {
+    flex-direction: column;
     align-items: center;
+}
+
+#item {
+    width: inherit;
+    outline: none;
+    border: none;
+    padding: 1%;
+    box-shadow: none;
+    background-color: rgb(134, 134, 134);
+    font-size: inherit;
+    border-radius: inherit;
 }

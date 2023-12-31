@@ -44,6 +44,9 @@ export default function App() {
 
   // Use for debugging
   useEffect(() => {
+    setItem(() => {
+      return "";
+    });
     console.log(todos);
   }, [todos]);
 
@@ -51,7 +54,7 @@ export default function App() {
     <>
       <form className="new-item-form" onSubmit={handleSubmit}>
         <div className="form-row">
-          <label htmlFor="item">New Item:</label>
+          <label htmlFor="item">New Item: </label>
           <input
             type="text"
             id="item"
@@ -60,7 +63,7 @@ export default function App() {
           />
         </div>
         <button className="btn add-btn" type="submit">
-          Add
+          Add Item
         </button>
       </form>
       <h1 className="header">To Do List</h1>
@@ -71,6 +74,7 @@ export default function App() {
               <label>
                 <input
                   type="checkbox"
+                  className="checkbox"
                   checked={todo.completed}
                   onChange={(event) => {
                     toggleTodo(todo.id, event.target.checked);
